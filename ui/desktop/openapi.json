@@ -4718,6 +4718,9 @@
           "name": {
             "type": "string"
           },
+          "preserves_thinking": {
+            "type": "boolean"
+          },
           "requires_auth": {
             "type": "boolean"
           },
@@ -7895,6 +7898,11 @@
           "message_count"
         ],
         "properties": {
+          "accumulated_cost": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
           "accumulated_input_tokens": {
             "type": "integer",
             "format": "int32",
@@ -8594,6 +8602,11 @@
           "accumulatedTotalTokens"
         ],
         "properties": {
+          "accumulatedCost": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
           "accumulatedInputTokens": {
             "type": "integer",
             "format": "int32"
@@ -8957,6 +8970,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "preserves_thinking": {
+            "type": "boolean",
+            "nullable": true
           },
           "requires_auth": {
             "type": "boolean"
