@@ -43,6 +43,10 @@ const i18n = defineMessages({
     id: 'modelsBottomBar.localModelSettingsTitle',
     defaultMessage: 'Local Model Settings — {modelName}',
   },
+  resolvedModel: {
+    id: 'modelsBottomBar.resolvedModel',
+    defaultMessage: 'Resolved model',
+  },
 });
 
 interface ModelsBottomBarProps {
@@ -165,7 +169,7 @@ export default function ModelsBottomBar({
           </p>
           {shouldShowResolvedModel && resolvedDisplayModelName && (
             <div className="mx-2 pb-2 border-b mb-2">
-              <h6 className="text-xs text-text-primary">Resolved model</h6>
+              <h6 className="text-xs text-text-primary">{intl.formatMessage(i18n.resolvedModel)}</h6>
               <p className="text-xs text-text-primary truncate" title={resolvedModel ?? undefined}>
                 {resolvedDisplayModelName}
               </p>

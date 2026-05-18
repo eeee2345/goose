@@ -42,6 +42,10 @@ const i18n = defineMessages({
     id: 'progressiveMessageList.searchHint',
     defaultMessage: 'Press Cmd/Ctrl+F to load all messages immediately for search',
   },
+  modelChanged: {
+    id: 'progressiveMessageList.modelChanged',
+    defaultMessage: 'Model changed: {previousModel} → {currentModel}',
+  },
 });
 
 interface ProgressiveMessageListProps {
@@ -111,7 +115,10 @@ export default function ProgressiveMessageList({
   const renderModelChangeDisclosure = (previousModel: string, currentModel: string) => (
     <SystemNotificationInline
       notification={{
-        msg: `Model changed: ${getModelDisplayName(previousModel)} → ${getModelDisplayName(currentModel)}`,
+        msg: intl.formatMessage(i18n.modelChanged, {
+          previousModel: getModelDisplayName(previousModel),
+          currentModel: getModelDisplayName(currentModel),
+        }),
         notificationType: 'inlineMessage',
       }}
     />
